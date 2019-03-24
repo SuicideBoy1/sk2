@@ -123,7 +123,7 @@ if (reaction.emoji.name === 'Rust'){
   const member = reaction.message.guild.members.get (user.id);
   member.addRole ('428481805792968715').catch();
 }
-  });
+  })
 
 bot.on('message', (message) => {
 
